@@ -1,0 +1,52 @@
+{
+  "name": "pris-market",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "classnames": "^2.5.1",
+    "dom-to-pdf": "^0.3.2",
+    "framer-motion": "^11.0.6",
+    "i18next": "^23.10.1",
+    "i18next-http-backend": "^2.5.0",
+    "libphonenumber-js": "^1.10.58",
+    "lodash.debounce": "^4.0.8",
+    "next": "13.5.6",
+    "next-i18next": "^15.2.0",
+    "react": "^18.2.0",
+    "react-datepicker": "^6.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.0",
+    "react-i18next": "^14.1.0",
+    "react-icons": "^5.0.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-outside-click-handler": "^1.3.0",
+    "react-timer-hook": "^3.0.7",
+    "sass": "^1.71.1",
+    "swiper": "^11.0.7"
+  },
+  "engines": {
+    "node": "21.5.0",
+    "yarn": "1.22.19"
+  },
+  "devDependencies": {
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-outside-click-handler": "^1.3.3",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.6",
+    "typescript": "^5"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}

@@ -1,0 +1,48 @@
+@use './mixins' as *;
+
+:root {
+  --primary-bg: #fff;
+  --accent-bg: #f6f9fe;
+  --accent-bg-2: #f0f4fa;
+
+  --primary-color: #3f96d0;
+  --primary-color-light: #e7f6ff;
+  --primary-color-f7: #cee7f7;
+
+  --color-danger: #ea2525;
+  --color-danger-light: #ffdfdf;
+  --color-warning: #eaa725;
+  --color-warning-light: #fff0df;
+  --color-success: #118941;
+  --color-success-light: #daf0e3;
+
+  --color-grey: #e2e5ea;
+  --color-grey-95: #56595e;
+
+  --color-pitch: #18202f;
+  --color-border: #d6dfef;
+  --color-grey-dark: #b3bccc;
+  --color-pale: #6e7888;
+
+  --border-radius: 1.2rem;
+  --border-radius-lg: 1.8rem;
+
+  --header-height: 7.5rem;
+  --cart-drawer-width: 50rem;
+  --modal-form-width: 32rem;
+  --section-padding: 2rem;
+  --grid-products-gap: 2rem;
+  --min-card-width: 16rem;
+
+  @include respond('tablet') {
+    --header-height: 6rem;
+  }
+
+  @include respond('mid') {
+    --modal-form-width: 100%;
+    --cart-drawer-width: 100%;
+    --min-card-width: 14rem;
+    --section-padding: 1.5rem;
+    --grid-products-gap: 1rem;
+  }
+}

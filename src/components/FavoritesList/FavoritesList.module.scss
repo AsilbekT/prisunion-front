@@ -1,0 +1,25 @@
+.list {
+  background: var(--accent-bg);
+  min-height: 100vh;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.empty {
+  margin-top: 6vh;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-card-width), 1fr));
+  gap: var(--grid-products-gap);
+}
+
+.content {
+  padding: var(--section-padding) 0;
+}

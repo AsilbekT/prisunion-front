@@ -1,0 +1,78 @@
+@use '../../../assets/sass/abstracts/mixins' as *;
+
+.info {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color-light);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: 2rem;
+  background: var(--accent-bg);
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  border-radius: var(--border-radius);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formHead {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+
+  input:first-child {
+    width: 5rem;
+    text-align: center;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    border-right: none;
+  }
+
+  input:last-child {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    flex-grow: 1;
+  }
+}
+
+.content {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  box-shadow: 0 0 1rem rgba(#000, 0.1);
+  border-radius: var(--border-radius);
+  width: var(--modal-form-width);
+  background: var(--primary-bg);
+}
+
+@include respond('mid') {
+  .info {
+    align-items: flex-start;
+  }
+
+  .content {
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .form {
+    justify-content: center;
+    flex-grow: 1;
+  }
+}

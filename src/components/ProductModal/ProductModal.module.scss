@@ -1,0 +1,21 @@
+.content {
+  h4 {
+    font-weight: 600;
+  }
+}
+
+.priceGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+
+  button:first-child {
+    flex-grow: 1;
+  }
+}

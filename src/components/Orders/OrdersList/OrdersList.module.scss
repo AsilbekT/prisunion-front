@@ -1,0 +1,33 @@
+.orders {
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--accent-bg);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  border: 1px solid transparent;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-border);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.head {
+  position: sticky;
+  top: -2rem;
+  left: 0;
+}

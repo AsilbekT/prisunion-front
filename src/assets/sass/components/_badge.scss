@@ -1,0 +1,82 @@
+.badge {
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+
+  span {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  svg {
+    width: 1rem;
+  }
+
+  &--success {
+    background: #e0fbe2;
+    color: var(--color-success);
+
+    span {
+      background: #c9f3ce;
+    }
+
+    svg {
+      color: var(--color-success);
+      fill: var(--color-success);
+    }
+  }
+
+  &--fail {
+    background: #fef2f2;
+
+    span {
+      background: var(--color-danger-light);
+    }
+
+    svg {
+      color: var(--color-danger);
+      fill: var(--color-danger);
+      width: 1.4rem;
+    }
+  }
+
+  &--warning {
+    background: var(--color-warning-light);
+    color: var(--color-warning);
+  }
+
+  &--info {
+    background: var(--primary-color-light);
+    color: var(--primary-color);
+  }
+}
+
+[data-items] {
+  position: relative;
+
+  &::after {
+    content: attr(data-items);
+    position: absolute;
+    top: -0.35rem;
+    left: -0.35rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: var(--primary-color);
+    color: var(--primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1rem;
+  }
+}

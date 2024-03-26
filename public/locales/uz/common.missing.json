@@ -1,0 +1,30 @@
+{
+  "login": "login",
+  "pleaseEnterPhoneTitle": "pleaseEnterPhoneTitle",
+  "continue": "continue",
+  "confirm": "confirm",
+  "name": "name",
+  "lastName": "lastName",
+  "address": "address",
+  "family": "family",
+  "friend": "friend",
+  "lawyer": "lawyer",
+  "other": "other",
+  "attention": "attention",
+  "cardNumber": "cardNumber",
+  "cardExpires": "cardExpires",
+  "payment": "payment",
+  "enterCard": "enterCard",
+  "card": "card",
+  "enterCode": "enterCode",
+  "pages": {
+    "home": {
+      "title": "pages.home.title",
+      "description": "pages.home.description"
+    },
+    "transactions": {
+      "title": "pages.transactions.title",
+      "description": "pages.transactions.description"
+    }
+  }
+}

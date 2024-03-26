@@ -1,0 +1,124 @@
+{
+  "language": "Til",
+  "somethingWrong": "Xatolik yuz berdi. Iltimos qayta urinib ko'ring",
+  "notApproved": "Siz hali ma'sullar tomonidan tasdiqlanmagansiz.",
+  "pay": "To'lov qilish",
+  "savedShown": "Bu yerda o'zingizga saqlab olgan mahsulotlar ko'rinadi!",
+  "nothingFound": "Hech narsa topilmadi!",
+  "personalInfo": "Shaxsiy ma'lumotlar",
+  "approvedStatusNone": "Indentifikatsiyadan o'tmagan",
+  "approved": "Indentifikatsiyadan o'tgan",
+  "prisonersCount": "Mahbuslar soni",
+  "phoneNumber": "Tel. Raqami",
+  "orderHistory": "Buyurtmalar tarixi",
+  "contactUs": "Biz bilan bog'laning",
+  "categories": "Kategoriyalar",
+  "saved": "Saqlanganlar",
+  "cart": "Savatcha",
+  "addToCart": "Savatga",
+  "all": "Barchasi",
+  "cardNumber": "Karta raqami",
+  "cardExpires": "Muddati",
+  "card": "Karta ma'lumotlari",
+  "payment": "To'lov",
+  "buy": "Sotib olish",
+  "save": "Saqlanganlarga qo'shish",
+  "faq": "Eng ko'p beriladigan savollar",
+  "enterPersonalInfo": "O'zingiz haqqingizda ma'lumotlarni kiriting.",
+  "profile": "Profilim",
+  "attention": "Diqqat!",
+  "enter": "Kiriting...",
+  "enterCode": "Telefon raqamingizga yuborilgan ko'dni kiriting",
+  "enterPrisonerInfo": "Mahbus haqida ma'lumotlarni kiriting",
+  "removeFavorite": "Saqlangalardan o'chirish",
+  "prisonerInfo": "Mahbus ma'lumotlari",
+  "relationship": "Mahbusga kim bo'lasiz?",
+  "enterInfo": "Ma'lumotlarni kiriting",
+  "clear": "Tozalash",
+  "orderHistoryShown": "Bu yerda buyurtmalar tarixi ko'rinadi",
+  "close": "Yopish",
+  "orderInfo": "Buyurtma Tafsilotlari",
+  "orderNumber": "Buyurtma raqami",
+  "back": "Ortga",
+  "limit": "Limit",
+  "limitText": "O'zbekiston Respublikasidagi Qamoqxonalarga, 12 kgdan ortiq mahsulot kirgizish mumkin emas!",
+  "removeItem": "Savatdan o'chirish",
+  "search": "Qidirish",
+  "fullName": "Ism",
+  "name": "Ism",
+  "lastName": "Familiya",
+  "gender": "Jinsi",
+  "birthday": "Tug'ilgan sanasi",
+  "orderDate": "Buyurtma sanasi",
+  "address": "Manzil",
+  "products": "Mahsulotlar",
+  "loading": "Ma'lumotlar yuklanmoqda!",
+  "wrongCode": "Noto'g'ri kod. Iltimos qayta urinib ko'ring.",
+  "orderStatus": "Buyurtma holati",
+  "resend": "Qayta yuborish",
+  "productsWeight": "Mahsulotlar umumiy hajmi",
+  "infoCheck": "Ma'lumotlarni tekshirish",
+  "clearCamera": "Kamera yaxshi tasdiqlashi uchun, yoruq xonaga chiqib oling",
+  "tryAgain": "Qayta urinish",
+  "male": "Erkak",
+  "takePhoto": "Suratga olish",
+  "continue": "Davom etish",
+  "confirm": "Tasdiqlash",
+  "logout": "Chiqish",
+  "totalPrice": "Umumiy summa",
+  "paid": "To'langan",
+  "outOfStock": "Qolmagan",
+  "relationships": {
+    "family": "Oila azosi",
+    "friend": "Do'sti",
+    "lawyer": "Advokati",
+    "other": "Boshqa"
+  },
+  "status": {
+    "Pending": "Tekshirilmoqda",
+    "processed": "Qabul qilindi",
+    "delivered": "Yetkazib berilmoqda",
+    "done": "Yetkazib berildi"
+  },
+  "pages": {
+    "home": {
+      "title": "PrisUnion | Mahbuslar uchun xaridlar",
+      "description": "Mahbuslar uchun xaridlar meta description"
+    },
+    "faq": {
+      "title": "Ko'p beriladigan savollar",
+      "description": "Mahbuslar uchun xaridlar meta description"
+    },
+    "prisoners": {
+      "title": "Mahbuslar",
+      "description": "Mahbuslar uchun xaridlar meta description"
+    },
+    "singleOrder": {
+      "title": "Buyurtma Tafsilotlari",
+      "description": "Mahbuslar uchun xaridlar meta description"
+    },
+    "orders": {
+      "title": "Buyurtmalar",
+      "description": "Mahbuslar uchun xaridlar meta description"
+    },
+    "profile": {
+      "title": "Profilim",
+      "description": "Mahbuslar uchun xaridlar meta description"
+    },
+    "favorites": {
+      "title": "Saqlangan Mahsulotlar",
+      "description": "Mahbuslar uchun xaridlar meta description"
+    },
+    "login": {
+      "title": "Tizimga Kirish",
+      "description": "Mahbuslar uchun xaridlar meta description"
+    }
+  },
+  "codeSent": "telefon raqamiga 4 xonali sms kod yuborildi, ushbu kodni kiriting",
+  "login": "Tizimga kirish",
+  "download": "Yuklab olish",
+  "pendingPayment": "To'lov amalga oshirilmagan",
+  "yourPhone": "Telefon raqamingiz",
+  "aboutOrder": "Buyurtma haqida",
+  "pleaseEnterPhoneTitle": "Iltimos, tizimga kirish yoki ro'yxatdan o'tish uchun, telefon raqamingizni kiriting."
+}

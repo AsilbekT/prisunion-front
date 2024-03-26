@@ -1,0 +1,16 @@
+.container {
+  background: var(--accent-bg);
+  padding: calc(var(--section-padding) * 1.5) 0;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+}

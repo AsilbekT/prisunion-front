@@ -1,0 +1,16 @@
+{
+  "language": "language",
+  "login": "login",
+  "pleaseEnterPhoneTitle": "pleaseEnterPhoneTitle",
+  "continue": "continue",
+  "pages": {
+    "home": {
+      "title": "pages.home.title",
+      "description": "pages.home.description"
+    },
+    "transactions": {
+      "title": "pages.transactions.title",
+      "description": "pages.transactions.description"
+    }
+  }
+}

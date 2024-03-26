@@ -1,0 +1,20 @@
+.collapsable {
+  transition: height 0.4s ease;
+  overflow: hidden;
+}
+
+.collapsable-init {
+  visibility: visible !important;
+}
+
+.collapsable-container {
+  svg {
+    transition: transform 0.2s ease;
+  }
+
+  &--open {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "howDownload": {
+    "q": "Dasturni qanday yuklab olishim mumkin?",
+    "a": "Dasturni yuklab olish uchun, qurilmangizning operatsion tizimiga mos keladigan ilova do'koniga o'ting. Android foydalanuvchilari Google Play do'konidan, iOS foydalanuvchilari esa Apple App Store'dan foydalanishlari mumkin. Dastur nomini qidiruv satriga kiriting va \"O'rnatish\" yoki \"Yuklab olish\" tugmasini bosib, dasturni o'rnatishni boshlang."
+  },
+  "howTrack": {
+    "q": "Buyurtmani qanday qilib kuzatishim mumkin?",
+    "a": "Buyurtmangizni kuzatishingiz uchun dasturning. \"Buyurtmalar tarixi\" bo'limiga o'ting. Buyurtmangiz statusi bo'yicha ma'lumotlarni ushbu oynadan olishingiz mumkin."
+  },
+  "howRegister": {
+    "q": "Hisob qaydnomasini qanday yarataman yoki",
+    "a": "Hisob qaydnomasini qanday yarataman yoki kirishim mumkin? Dasturni ochganingizdan so'ng, mobil raqamingizni kiriting va sizga tasdiqlash uchun 4 xonali kod boradi, ushbu kodni kod kiritish oynasida kiritishingiz va dasturdan to'laqonli foydalanishingiz mumkin."
+  }
+}

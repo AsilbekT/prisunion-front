@@ -1,0 +1,29 @@
+.bubble {
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  bottom: -50%;
+  left: 100%;
+  z-index: 99;
+
+  & > svg {
+    position: absolute;
+    top: -20%;
+    left: -12%;
+    z-index: 1;
+    width: 120%;
+    height: 120%;
+  }
+
+  & > div {
+    position: relative;
+    z-index: 2;
+    min-width: 30rem;
+    min-height: 10rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

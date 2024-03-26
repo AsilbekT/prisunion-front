@@ -1,0 +1,24 @@
+.item {
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  background: var(--accent-bg);
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  span {
+    font-weight: 400;
+  }
+
+  p {
+    height: 0;
+    line-height: 2.1rem;
+  }
+}

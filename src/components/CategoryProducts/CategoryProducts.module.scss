@@ -1,0 +1,19 @@
+.category {
+  min-height: 100vh;
+  background: var(--accent-bg);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-card-width), 1fr));
+  gap: var(--grid-products-gap);
+  padding: var(--section-padding) 0;
+}
+
+.head {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  box-shadow: 0 0 1rem rgba(#000, 0.05);
+}

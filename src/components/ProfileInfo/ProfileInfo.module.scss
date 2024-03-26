@@ -1,0 +1,25 @@
+.profile {
+  h6 {
+    margin-bottom: 2.5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  li {
+    gap: 1rem;
+    background: var(--accent-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      color: var(--primary-color);
+      fill: var(--primary-color);
+    }
+  }
+}

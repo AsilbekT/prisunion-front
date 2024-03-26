@@ -1,0 +1,95 @@
+@use '../../assets/sass/abstracts/mixins' as *;
+
+.form {
+  position: relative;
+
+  input {
+    padding-left: 4rem;
+    width: 30rem;
+    max-width: 100%;
+    transition: width 0.4s ease;
+
+    &:focus {
+      width: 32rem;
+    }
+
+    &:focus ~ ul {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  svg {
+    color: var(--color-pale);
+    fill: var(--color-pale);
+  }
+}
+
+.drop {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130%;
+  z-index: 99;
+  background: var(--primary-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 25rem;
+  padding: 1rem;
+  gap: 1rem;
+  max-height: calc(100vh - var(--header-height) - 10rem);
+  overflow-y: auto;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    span {
+      width: calc(100% - 11rem);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    div {
+      width: 9rem;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 5rem;
+}
+
+@include respond('tablet') {
+  .form {
+    input {
+      width: 100%;
+
+      &:focus {
+        width: 100%;
+      }
+    }
+  }
+}

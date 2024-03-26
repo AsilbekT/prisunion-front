@@ -1,0 +1,37 @@
+@use './mixins' as *;
+
+.hidden {
+  display: none;
+}
+
+.vertical-group,
+.horizontal-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.horizontal-group {
+  flex-direction: row;
+  align-items: center;
+}
+
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.mobile-only {
+  display: none;
+
+  @include respond('mid') {
+    display: flex;
+  }
+}
+
+.w-f {
+  width: 100%;
+}

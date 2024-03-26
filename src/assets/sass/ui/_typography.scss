@@ -1,0 +1,95 @@
+.title-lg {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.text-pale {
+  font-size: 1.3rem;
+  color: var(--color-pale);
+}
+
+.title {
+  font-size: 1.25rem;
+  line-height: 1.8rem;
+}
+
+.heading {
+  &--primary {
+    font-size: 2.85rem;
+  }
+
+  &--primary,
+  &--tertiary,
+  &--secondary,
+  &--4 {
+    font-weight: 600;
+  }
+
+  &--tertiary {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
+
+  &--secondary {
+    font-size: 2.1rem;
+  }
+
+  &--4 {
+    font-size: 1.4rem;
+  }
+}
+
+.text-bold,
+.text,
+.error {
+  color: var(--color-grey-95);
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+}
+
+.text-bold {
+  font-weight: 500;
+}
+
+.price,
+.price-lg,
+.price-bold {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: var(--color-pitch);
+}
+
+.price-lg {
+  font-size: 1.5rem;
+}
+
+.minor-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  line-height: 1.4rem;
+}
+
+.label {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: var(--color-pitch);
+}
+
+label .text-pale,
+.input-wrapper .text-pale,
+.select-wrapper .text-pale {
+  font-size: 1.2rem;
+}
+
+.error {
+  color: var(--color-danger);
+}
+
+.price-bold {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+}

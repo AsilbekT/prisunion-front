@@ -1,0 +1,11 @@
+{
+  "language": "language",
+  "login": "login",
+  "continue": "continue",
+  "pages": {
+    "transactions": {
+      "title": "pages.transactions.title",
+      "description": "pages.transactions.description"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.content {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: end;
+  align-items: center;
+  gap: 1rem;
+
+  & > span:not(:only-child):last-of-type {
+    display: none;
+  }
+}
+
+.leftGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav {
+  width: 100%;
+  position: relative;
+  z-index: 9999;
+
+  nav {
+    background: var(--primary-bg);
+    width: 100%;
+    z-index: 2;
+    position: relative;
+  }
+}

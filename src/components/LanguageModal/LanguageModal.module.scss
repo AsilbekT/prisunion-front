@@ -1,0 +1,38 @@
+.languages {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h6 {
+    margin-bottom: 1rem;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:last-child) {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--primary-color);
+      fill: var(--primary-color);
+    }
+
+    &[data-active='true'] {
+      color: var(--primary-color);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--primary-color);
+    }
+  }
+}

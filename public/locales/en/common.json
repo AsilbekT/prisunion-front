@@ -1,0 +1,124 @@
+{
+    "language": "Language",
+    "somethingWrong": "An error occurred. Please try again",
+    "notApproved": "You have not yet been approved by administrators.",
+    "pay": "Pay",
+    "savedShown": "Your saved products are shown here!",
+    "nothingFound": "Nothing found!",
+    "personalInfo": "Personal Information",
+    "approvedStatusNone": "Not authenticated",
+    "approved": "Identified",
+    "prisonersCount": "Number of prisoners",
+    "phoneNumber": "Tel. Number",
+    "orderHistory": "Order History",
+    "contactUs": "Contact Us",
+    "categories": "Categories",
+    "saved": "Saved",
+    "cart": "Cart",
+    "addToCart": "Add to Cart",
+    "all": "All",
+    "cardNumber": "Card Number",
+    "cardExpires": "Expires",
+    "card": "Card Information",
+    "payment": "Payment",
+    "buy": "Buy",
+    "save": "Add to Saved",
+    "faq": "Frequently Asked Questions",
+    "enterPersonalInfo": "Enter information about yourself.",
+    "profile": "My Profile",
+    "attention": "Attention!",
+    "enter": "Enter...",
+    "enterCode": "Enter the code sent to your phone number",
+    "enterPrisonerInfo": "Enter information about the prisoner",
+    "removeFavorite": "Remove from Favorites",
+    "prisonerInfo": "Prisoner Info",
+    "relationship": "Who will you be a prisoner?",
+    "enterInfo": "Enter information",
+    "clear": "Clear",
+    "orderHistoryShown": "Order history is shown here",
+    "close": "Close",
+    "orderInfo": "Order Details",
+    "orderNumber": "Order Number",
+    "back": "Back",
+    "limit": "Limit",
+    "limitText": "No more than 12 kg of goods can be brought into the prisons of the Republic of Uzbekistan!",
+    "removeItem": "Remove from cart",
+    "search": "Search",
+    "fullName": "Name",
+    "name": "Name",
+    "lastName": "Last Name",
+    "gender": "Gender",
+    "birthday": "Date of birth",
+    "orderDate": "Order Date",
+    "address": "Address",
+    "products": "Products",
+    "loading": "Loading data!",
+    "wrongCode": "Wrong code. Please try again.",
+    "orderStatus": "Order Status",
+    "resend": "Resend",
+    "productsWeight": "Total weight of products",
+    "infoCheck": "Information Check",
+    "clearCamera": "For better confirmation of the camera, go out into a bright room",
+    "tryAgain": "Try Again",
+    "male": "Male",
+    "takePhoto": "Take Photo",
+    "continue": "Continue",
+    "confirm": "Confirm",
+    "logout": "Logout",
+    "totalPrice": "Total Amount",
+    "paid": "Paid",
+    "outOfStock": "Out of Stock",
+    "relationships": {
+        "family": "Family member",
+        "friend": "Friend",
+        "lawyer": "Lawyer",
+        "other": "Other"
+    },
+    "status": {
+        "Pending": "Checking",
+        "processed": "Accepted",
+        "delivered": "Delivered",
+        "done": "Delivered"
+    },
+    "pages": {
+        "home": {
+            "title": "PrisUnion | Shopping for Prisoners",
+            "description": "Prisoner purchases meta description"
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "description": "Prisoner purchases meta description"
+        },
+        "prisoners": {
+            "title": "Prisoners",
+            "description": "Prisoner purchases meta description"
+        },
+        "singleOrder": {
+            "title": "Order Details",
+            "description": "Prisoner purchases meta description"
+        },
+        "orders": {
+            "title": "Orders",
+            "description": "Prisoner purchases meta description"
+        },
+        "profile": {
+            "title": "My Profile",
+            "description": "Prisoner purchases meta description"
+        },
+        "favorites": {
+            "title": "Stored Products",
+            "description": "Prisoner purchases meta description"
+        },
+        "login": {
+            "title": "Login",
+            "description": "Prisoner shopping meta description"
+        }
+    },
+    "codeSent": "a 4-digit SMS code was sent to the phone number, enter this code",
+    "login": "Login",
+    "download": "Download",
+    "pendingPayment": "Payment pending",
+    "yourPhone": "Your phone number",
+    "aboutOrder": "About Order",
+    "pleaseEnterPhoneTitle": "Please enter your phone number to login or register."
+}

@@ -1,0 +1,36 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: var(--modal-form-width);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+
+    & > div:last-of-type {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  label:first-of-type {
+    width: 70%;
+    input {
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+    }
+  }
+
+  label:last-of-type {
+    width: 30%;
+    input {
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
+  }
+}

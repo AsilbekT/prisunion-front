@@ -1,0 +1,160 @@
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: var(--border-radius);
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+  justify-content: center;
+
+  svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    flex-shrink: 0;
+  }
+
+  &--rounded {
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  &--box {
+    padding: 1rem;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+
+  &--primary {
+    background: var(--primary-color);
+    color: var(--primary-bg);
+    font-weight: 600;
+
+    svg {
+      color: var(--primary-bg);
+      fill: var(--primary-bg);
+    }
+  }
+
+  &--arrow {
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      z-index: 1;
+      width: 1.2rem;
+      color: var(--primary-bg);
+      fill: var(--primary-bg);
+    }
+  }
+
+  &--lg {
+    padding: 1.5rem 4rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  &--pale {
+    padding: 1rem;
+
+    svg {
+      color: var(--color-pitch);
+      fill: var(--color-pitch);
+    }
+
+    &:hover,
+    &:focus {
+      background: var(--color-grey);
+    }
+  }
+
+  &--secondary {
+    background: var(--primary-color-light);
+    color: var(--primary-color);
+
+    svg {
+      color: var(--primary-color);
+      fill: var(--primary-color);
+    }
+  }
+}
+
+.btn-back {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.8rem;
+  background: var(--accent-bg-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-add-to-cart {
+  width: 100%;
+  background: var(--accent-bg);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+
+  svg {
+    color: var(--primary-color);
+    fill: var(--primary-color);
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+.rounded-bordered-btn {
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  background: var(--primary-bg);
+
+  svg {
+    width: 1.35rem;
+    height: 1.35rem;
+    color: var(--color-pitch);
+    fill: var(--color-pitch);
+  }
+
+  &--primary {
+    background: var(--primary-color);
+
+    svg {
+      color: var(--primary-bg);
+      fill: var(--primary-bg);
+    }
+  }
+}
+
+.rounded-btn {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color-light);
+
+  svg {
+    color: var(--primary-color);
+    fill: var(--primary-color);
+  }
+}

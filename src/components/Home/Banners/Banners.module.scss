@@ -1,0 +1,33 @@
+.banner {
+  background: var(--accent-bg);
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  a > span {
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    color: var(--color-pitch);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: rgba(#fff, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: var(--border-radius-lg);
+  }
+}
+
+.container {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.banners {
+  padding: var(--section-padding) 0;
+}

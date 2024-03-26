@@ -1,0 +1,152 @@
+@use '../../assets/sass/abstracts/mixins' as *;
+
+.profile {
+  background: var(--accent-bg);
+  min-height: 100vh;
+  padding: 1rem 0;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.nav {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  flex-shrink: 0;
+}
+
+.nav,
+.right {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  background: var(--primary-bg);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.right {
+  flex-grow: 1;
+  min-height: 55.6rem;
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: var(--border-radius);
+  }
+}
+
+.personalInfoBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  svg {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+
+  a {
+    justify-content: space-between;
+    margin-top: 0.5rem;
+
+    span:first-of-type {
+      gap: 1.25rem;
+    }
+  }
+}
+
+.body {
+  li,
+  li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    span {
+      font-size: 1.4rem;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 1rem;
+    }
+
+    span:first-of-type {
+      gap: 1.15rem;
+    }
+
+    & > span > svg {
+      width: 2rem;
+      height: 2rem;
+      fill: var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    & > svg,
+    span + span svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      color: var(--color-pitch);
+      fill: var(--color-pitch);
+    }
+  }
+
+  a[data-active='true'] {
+    filter: grayscale(1);
+    pointer-events: none;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+.user {
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color-light);
+  outline: var(--primary-color-light) solid 1px;
+  outline-offset: 2px;
+
+  svg {
+    color: var(--primary-color);
+    fill: var(--primary-color);
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@include respond('tablet') {
+  .nav {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .right {
+    padding: 1rem 0;
+  }
+
+  .profile {
+    padding: 0;
+    background: var(--primary-bg);
+  }
+}

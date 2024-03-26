@@ -1,0 +1,23 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  height: 100%;
+
+  svg {
+    margin-bottom: 1rem;
+  }
+
+  span,
+  p {
+    max-width: 70%;
+    text-align: center;
+  }
+
+  p {
+    line-height: 2.2rem;
+    font-size: 1.5rem;
+  }
+}
