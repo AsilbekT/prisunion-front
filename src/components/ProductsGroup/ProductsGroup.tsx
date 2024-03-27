@@ -70,14 +70,8 @@ export const ProductsGroup: FC<ProductsGroupProps> = memo(({
               slidesPerView: 2.25,
             },
             550: {
-              slidesPerView: 3.35
+              slidesPerView: 4.35
             },
-            768: {
-              slidesPerView: 5
-            },
-            1024: {
-              slidesPerView: 6.15
-            }
           }}
         >
           {productEls}

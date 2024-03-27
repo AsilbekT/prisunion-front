@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, ReactNode, memo, useCallback, useEffect, useState } from "react";
 import { BiChevronRight } from "react-icons/bi";
+import { BsBell } from 'react-icons/bs';
 import { IoLogOutOutline } from "react-icons/io5";
 import { Badge } from "../Badge";
 import {
@@ -31,7 +32,7 @@ const CONTACT_URL = 'https://t.me/asilbek_turgunboev';
 
 export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
   const { prisonerContactFetch, logout, isApproved } = useAuthContext();
-  const { media, showLanguages, setShowLanguages } = useGlobalContext();
+  const { media, showLanguages, setShowLanguages, notifications } = useGlobalContext();
   const [showPersonalInfo, setShowPersonalInfo] = useState(false);
   const router = useRouter();
   const { t, i18n } = useTranslation();
@@ -118,7 +119,7 @@ export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
                         </span>
                       </a>
                     </li>
-                    <li tabIndex={0}>
+                    <li>
                       <Link
                         data-active={router.pathname.includes('/profile/orders')}
                         href="/profile/orders"
@@ -153,6 +154,21 @@ export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
                         <BiChevronRight />
                       </a>
                     </li>
+                    <li>
+                      <Link
+                        href="/profile/notifications"
+                        title={t('notifications')}
+                        data-active={router.pathname === '/profile/notifications'}
+                      >
+                        <span className="horizontal-group label">
+                          <span data-items={notifications.length ? notifications.length : undefined}>
+                            <BsBell />
+                          </span>
+                          {t('notifications')}
+                        </span>
+                      </Link>
+                      <BiChevronRight />
+                    </li>
                     <li
                       tabIndex={0}
                       data-active={showLanguages}
@@ -167,7 +183,7 @@ export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
                         <BiChevronRight />
                       </span>
                     </li>
-                    <li tabIndex={0}>
+                    <li>
                       <Link
                         href="/profile/faq"
                         title={t('faq')}

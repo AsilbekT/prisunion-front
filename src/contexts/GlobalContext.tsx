@@ -1,13 +1,16 @@
 import { ErrorModal } from "@/components/ErrorModal";
 import { LanguageModal } from "@/components/LanguageModal/LanguageModal";
 import { ModalSpinner } from "@/components/Spinner";
+import { useFetch } from "@/hooks/useFetch";
 import { useHideScrollbar } from "@/hooks/useHideScrollbar";
 import useMedia from "@/hooks/useMedia";
 import { ICategory } from "@/interfaces/category.interface";
+import { INotification } from "@/interfaces/notifications.interface";
 import { StateSetter } from "@/interfaces/utils.interface";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { FC, ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
+import { useAuthContext } from "./AuthContext";
 
 interface IGlobalContext {
   media: ReturnType<typeof useMedia>;
@@ -21,6 +24,8 @@ interface IGlobalContext {
   activeProductView: number | null;
   setActiveProductView: StateSetter<number | null>;
   loading: boolean;
+  notifications: INotification[];
+  notificationsLoading: boolean;
   setLoading: StateSetter<boolean>;
   setShowLanguages: StateSetter<boolean>;
   showLanguages: boolean;
@@ -41,17 +46,27 @@ export const GlobalContextProvider: FC<GlobalContextProviderProps> =
     const [showFloatinMenu, setShowFloatinMenu] = useState(false);
     const [activeProductView, setActiveProductView] = useState<number | null>(null);
     const [showLanguages, setShowLanguages] = useState(false);
+    const { prisonerContactFetch } = useAuthContext();
     const media = useMedia(
       ['tablet', 'screen and (max-width: 1024px)']
     );
     const [error, setError] = useState('');
+    const notificationsFetch = useFetch<INotification[]>(true);
     const [loading, setLoading] = useState(false);
     const router = useRouter();
     const { t } = useTranslation();
 
     useEffect(() => {
+      if (prisonerContactFetch.data?.id) {
+        notificationsFetch.makeRequest({
+          url: 'notifications/'
+        });
+      }
+    }, [prisonerContactFetch.data, notificationsFetch.makeRequest]);
+
+    useEffect(() => {
       setShowFloatinMenu(false);
-    }, [router.query]);
+    }, [router.pathname]);
 
     useHideScrollbar(Boolean(activeProductView));
 
@@ -69,6 +84,8 @@ export const GlobalContextProvider: FC<GlobalContextProviderProps> =
       showLanguages,
       setError,
       loading,
+      notificationsLoading: notificationsFetch.loading,
+      notifications: notificationsFetch.data || [],
       setLoading,
     };
 

@@ -8,7 +8,11 @@ import { FC, memo, useCallback, useEffect, useMemo, useRef, useState } from "rea
 import { SearchIcon } from "../CustomIcons";
 import styles from './Searchbar.module.scss';
 
-export const SearchBar: FC = memo(() => {
+interface SearchBarProps {
+  onInputFocusToggle?: (focused: boolean) => void;
+}
+
+export const SearchBar: FC<SearchBarProps> = memo(({ onInputFocusToggle }) => {
   const { search, setSearch, setActiveProductView } = useGlobalContext();
   const fetch = useFetch<IProduct[]>();
   const [inputFocused, setInputFocused] = useState(false);
@@ -63,6 +67,12 @@ export const SearchBar: FC = memo(() => {
       );
     });
   }, [fetch.data]);
+
+  useEffect(() => {
+    if (typeof onInputFocusToggle === 'function') {
+      onInputFocusToggle(inputFocused);
+    }
+  }, [inputFocused, onInputFocusToggle]);
 
   return (
     <form className={styles.form} onSubmit={onSubmitSearch}>

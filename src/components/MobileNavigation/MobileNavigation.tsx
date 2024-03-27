@@ -1,10 +1,11 @@
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useCart } from "@/contexts/CartContext";
 import { useFavoritesContext } from "@/contexts/FavoritesContext";
+import { useGlobalContext } from "@/contexts/GlobalContext";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FC, memo } from "react";
+import { FC, memo, useState } from "react";
 import { BookmarkIcon, CartIcon, HomeIcon, Logo, UserIcon, UserOutlineIcon } from "../CustomIcons";
 import { SearchBar } from "../Searchbar/Searchbar";
 import styles from './MobileNavigation.module.scss';
@@ -15,6 +16,8 @@ const MobileNavigation: FC = memo(() => {
   const { setShowCart, totalCount } = useCart();
   const { favorites } = useFavoritesContext();
   const { t } = useTranslation();
+  const { notifications } = useGlobalContext();
+  const [inputFocused, setInputFocused] = useState(false);
 
   const user = prisonerContactFetch.data;
 
@@ -29,6 +32,7 @@ const MobileNavigation: FC = memo(() => {
                   <Link
                     href={user ? '/profile' : '/login'}
                     title={user ? t('profile') : t('login')}
+                    data-items={notifications.length ? notifications.length : undefined}
                     className="horizontal-group"
                   >
                     <span className="rounded-btn">
@@ -51,7 +55,10 @@ const MobileNavigation: FC = memo(() => {
                     <Logo />
                   </Link>
                 </div>
-                <SearchBar />
+                <div className={styles.search}>
+                  <SearchBar onInputFocusToggle={setInputFocused} />
+                </div>
+                {inputFocused && <div className="backdrop" />}
               </div>
             </div>
           </nav>
@@ -88,6 +95,8 @@ const MobileNavigation: FC = memo(() => {
           </li>
           <li
             className={styles.item}
+            data-has-items
+            data-items={notifications.length ? notifications.length : undefined}
             data-active={router.pathname.includes(user ? 'profile' : 'login')}
           >
             <Link

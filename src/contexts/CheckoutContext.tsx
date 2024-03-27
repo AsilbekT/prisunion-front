@@ -79,7 +79,7 @@ export const CheckoutContextProvider: FC<CheckoutContextProviderProps> = ({ chil
           body: JSON.stringify({
             pan: cardNumber,
             expire: cardExpires,
-            amount: 10000 || totalPrice,
+            amount: totalPrice,
             orderId
           }),
           headers: {

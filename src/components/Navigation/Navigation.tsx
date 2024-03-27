@@ -5,19 +5,21 @@ import { useGlobalContext } from "@/contexts/GlobalContext";
 import classNames from "classnames";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
-import { FC, memo } from "react";
+import { FC, memo, useState } from "react";
 import { BiCategoryAlt } from "react-icons/bi";
 import { BookmarkIcon, CartIcon, GlobeIcon, Logo, UserIcon } from "../CustomIcons";
 import { FloatingMenu } from "../FloatingMenu/FloatingMenu";
 import { SearchBar } from "../Searchbar/Searchbar";
 import styles from './Navigation.module.scss';
 
+
 const Navigation: FC = memo(() => {
-  const { setShowFloatinMenu, setShowLanguages } = useGlobalContext();
+  const { setShowFloatinMenu, setShowLanguages, notifications } = useGlobalContext();
   const { setShowCart, totalCount } = useCart();
   const { favorites } = useFavoritesContext();
   const { prisonerContactFetch } = useAuthContext();
   const { t, i18n } = useTranslation();
+  const [inputFocused, setInputFocused] = useState(false);
 
   const user = prisonerContactFetch.data;
 
@@ -36,8 +38,9 @@ const Navigation: FC = memo(() => {
               </button>
             </div>
             <div className={classNames(styles.search, 'abs-center')}>
-              <SearchBar />
+              <SearchBar onInputFocusToggle={setInputFocused} />
             </div>
+            {inputFocused && <div className="backdrop" />}
             <div className={styles.leftGroup}>
               <button
                 title={t('language')}
@@ -70,6 +73,7 @@ const Navigation: FC = memo(() => {
                   href={user ? '/profile' : '/login'}
                   title={user ? t('profile') : t('login')}
                   className={styles.user}
+                  data-items={notifications.length ? notifications.length : undefined}
                 >
                   <span className="rounded-btn">
                     <UserIcon />

@@ -24,8 +24,8 @@ function MyApp({
 }: PageProps) {
   return (
     <div className={inter.className}>
-      <GlobalContextProvider categories={categories}>
-        <AuthContextProvider>
+      <AuthContextProvider>
+        <GlobalContextProvider categories={categories}>
           <FavoritesContextProvider>
             <CartProvider>
               <CheckoutContextProvider>
@@ -35,8 +35,8 @@ function MyApp({
               </CheckoutContextProvider>
             </CartProvider>
           </FavoritesContextProvider>
-        </AuthContextProvider>
-      </GlobalContextProvider>
+        </GlobalContextProvider>
+      </AuthContextProvider>
     </div>
   )
 }
