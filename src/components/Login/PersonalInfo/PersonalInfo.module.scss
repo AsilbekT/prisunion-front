@@ -35,6 +35,17 @@
   gap: 1rem;
 }
 
+.date {
+  position: relative;
+
+  & > svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+  }
+}
+
 .inputGroup {
   display: flex;
 

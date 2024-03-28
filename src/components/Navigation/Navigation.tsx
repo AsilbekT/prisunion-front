@@ -29,7 +29,7 @@ const Navigation: FC = memo(() => {
         <div className="container">
           <div className={styles.content}>
             <div className={styles.logoContainer}>
-              <Link href="/">
+              <Link href="/" onClick={() => setShowFloatinMenu(false)}>
                 <Logo />
               </Link>
               <button onClick={() => setShowFloatinMenu(p => !p)} className="btn btn--secondary">

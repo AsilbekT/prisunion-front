@@ -43,6 +43,8 @@ export const LoginPhone: FC = memo(() => {
 
       if (response?.status === 'success') {
         setPhase(prev => prev + 1);
+      } else if (!response?.status) {
+        setError(t('somethingWrong'));
       }
     } catch (er) {
       console.log(er);

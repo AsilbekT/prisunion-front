@@ -12,6 +12,11 @@ import { useRouter } from "next/router";
 import { FC, ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
 import { useAuthContext } from "./AuthContext";
 
+declare global {
+  interface Window {
+    OneSignal: any;
+  }
+}
 interface IGlobalContext {
   media: ReturnType<typeof useMedia>;
   search: string;
@@ -56,6 +61,8 @@ export const GlobalContextProvider: FC<GlobalContextProviderProps> =
     const router = useRouter();
     const { t } = useTranslation();
 
+    useHideScrollbar(showFloatinMenu);
+
     useEffect(() => {
       if (prisonerContactFetch.data?.id) {
         notificationsFetch.makeRequest({
@@ -65,7 +72,17 @@ export const GlobalContextProvider: FC<GlobalContextProviderProps> =
     }, [prisonerContactFetch.data, notificationsFetch.makeRequest]);
 
     useEffect(() => {
+      window.OneSignal = window.OneSignal || [];
+      window.OneSignal.push(function () {
+        window.OneSignal.init({
+          appId: "e61b716e-c22d-4aaf-96cb-dbd8ee4327ed",
+        });
+      });
+    }, []);
+
+    useEffect(() => {
       setShowFloatinMenu(false);
+      setActiveProductView(null);
     }, [router.pathname]);
 
     useHideScrollbar(Boolean(activeProductView));

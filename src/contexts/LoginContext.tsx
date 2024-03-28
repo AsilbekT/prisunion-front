@@ -33,7 +33,9 @@ export const LoginContextProvider: FC<LoginContextProviderProps> = ({ children, 
     defaultValues: {
       firstName: '',
       lastName: '',
-      address: ''
+      address: '',
+      passportSerial: '',
+      passportId: '',
     },
   });
 
@@ -42,6 +44,8 @@ export const LoginContextProvider: FC<LoginContextProviderProps> = ({ children, 
       prisonerRelationship: PRISONER_RELATIONSHIP_OPTIONS[0],
       prisonerLastName: '',
       prisonerFirstName: '',
+      passportSerial: '',
+      passportId: '',
     },
   });
 

@@ -1,2 +1,53 @@
 .notifications {
+  li {
+    padding: 1rem;
+    background: var(--accent-bg);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+
+    &:hover,
+    &:active {
+      border-color: var(--color-border);
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-grow: 1;
+
+      div:last-child {
+        gap: 0;
+        flex-grow: 1;
+      }
+    }
+
+    & > svg {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+}
+
+.icon {
+  background: var(--primary-color-light);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+}
+
+.modal {
+  flex-direction: row;
+
+  & > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

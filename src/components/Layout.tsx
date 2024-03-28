@@ -1,7 +1,7 @@
 import { useGlobalContext } from "@/contexts/GlobalContext";
 import { FC, ReactNode } from "react";
 import CartDrawer from "./CartDrawer/CartDrawer";
-import { Footer } from "./Footer";
+import { Footer } from "./Footer/Footer";
 import MobileNavigation from "./MobileNavigation/MobileNavigation";
 import Navigation from "./Navigation/Navigation";
 import SafeHydrate from "./SafeHydrate";
@@ -12,7 +12,6 @@ interface LayoutProps {
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
   const { media } = useGlobalContext();
-
   return (
     <>
       <SafeHydrate releaseContent>
@@ -20,7 +19,9 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
         <CartDrawer />
       </SafeHydrate>
       <main>{children}</main>
-      <Footer />
+      <SafeHydrate>
+        {!media.tablet && <Footer />}
+      </SafeHydrate>
     </>
   );
 };

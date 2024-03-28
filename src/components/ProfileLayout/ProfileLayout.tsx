@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { FC, ReactNode, memo, useCallback, useEffect, useState } from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { BsBell } from 'react-icons/bs';
+import { GoDatabase } from "react-icons/go";
 import { IoLogOutOutline } from "react-icons/io5";
 import { Badge } from "../Badge";
 import {
@@ -169,6 +170,21 @@ export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
                       </Link>
                       <BiChevronRight />
                     </li>
+                    {media.tablet && (
+                      <li>
+                        <Link
+                          href="/profile/info"
+                          title={t('additionalInfo')}
+                          data-active={router.pathname === '/profile/info'}
+                        >
+                          <span className="horizontal-group label">
+                            <GoDatabase />
+                            {t('additionalInfo')}
+                          </span>
+                        </Link>
+                        <BiChevronRight />
+                      </li>
+                    )}
                     <li
                       tabIndex={0}
                       data-active={showLanguages}

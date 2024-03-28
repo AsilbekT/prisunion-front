@@ -18,6 +18,7 @@
   "addToCart": "Savatga",
   "all": "Barchasi",
   "cardNumber": "Karta raqami",
+  "downloadApp": "Bizning android ilovani yuklab oling",
   "cardExpires": "Muddati",
   "card": "Karta ma'lumotlari",
   "payment": "To'lov",
@@ -33,6 +34,7 @@
   "removeFavorite": "Saqlangalardan o'chirish",
   "prisonerInfo": "Mahbus ma'lumotlari",
   "relationship": "Mahbusga kim bo'lasiz?",
+  "passport": "Passport raqamaningiz",
   "enterInfo": "Ma'lumotlarni kiriting",
   "clear": "Tozalash",
   "orderHistoryShown": "Bu yerda buyurtmalar tarixi ko'rinadi",
@@ -110,6 +112,10 @@
       "title": "Profilim",
       "description": "Mahbuslar uchun xaridlar meta description"
     },
+    "info": {
+      "title": "Profilim",
+      "description": "Mahbuslar uchun xaridlar meta description"
+    },
     "favorites": {
       "title": "Saqlangan Mahsulotlar",
       "description": "Mahbuslar uchun xaridlar meta description"
@@ -119,7 +125,11 @@
       "description": "Mahbuslar uchun xaridlar meta description"
     }
   },
+  "additionalInfo": "Qo'shimcha ma'lumotlar",
   "codeSent": "telefon raqamiga 4 xonali sms kod yuborildi, ushbu kodni kiriting",
+  "telegram": "Telegram Kanal",
+  "phone": "Telefon",
+  "email": "Pochta",
   "login": "Tizimga kirish",
   "download": "Yuklab olish",
   "pendingPayment": "To'lov amalga oshirilmagan",

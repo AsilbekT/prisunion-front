@@ -3,9 +3,20 @@ import { ICategory } from "@/interfaces/category.interface";
 import classNames from "classnames";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
-import { FC, memo, useCallback, useMemo, useState } from "react";
+import { ComponentType, FC, memo, useCallback, useMemo, useState } from "react";
+import { FcBiohazard, FcBiomass, FcStackOfPhotos } from "react-icons/fc";
+import { GiClothes, GiMeatCleaver, GiShinyApple } from "react-icons/gi";
 import { IoCloseOutline } from "react-icons/io5";
 import styles from './FloatingMenu.module.scss';
+
+const ICONS_MAP: Record<string, ComponentType> = {
+  books: FcStackOfPhotos,
+  meets: GiMeatCleaver,
+  cigares: FcBiohazard,
+  fruits: GiShinyApple,
+  clothes: GiClothes,
+  'hygiene-products': FcBiomass
+};
 
 export const FloatingMenu: FC = memo(() => {
   const { categories, showFloatinMenu, setShowFloatinMenu } = useGlobalContext();
@@ -14,14 +25,18 @@ export const FloatingMenu: FC = memo(() => {
 
   const categoryEls = useMemo(() => {
     return categories.map(category => {
+      const Icon = ICONS_MAP[category.icon_class || ''];
       return (
         <li
           key={category.id}
           onMouseEnter={() => setActiveCategory(category)}
           onMouseLeave={() => setActiveCategory(null)}
-          className={styles.category}
+          className={classNames(styles.category, styles[category.icon_class || ''])}
         >
-          <Link className="underline-link" href={`/categories/${category.id}/products`}>
+          <Link className="horizontal-group" href={`/categories/${category.id}/products`}>
+            {Icon && (
+              <span><Icon /></span>
+            )}
             {category.name}
           </Link>
         </li>
@@ -52,9 +67,11 @@ export const FloatingMenu: FC = memo(() => {
             {categoryEls}
           </ul>
           {activeCategory?.image && (
-            <figure>
-              <img alt={activeCategory.name} src={activeCategory.image} />
-            </figure>
+            <div className={styles.image}>
+              <figure className="sixteen-nine">
+                <img alt={activeCategory.name} src={activeCategory.image} />
+              </figure>
+            </div>
           )}
         </div>
       </div>

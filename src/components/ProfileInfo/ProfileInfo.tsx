@@ -1,4 +1,5 @@
 import { useAuthContext } from "@/contexts/AuthContext";
+import { getFormattedDate } from "@/utils/date.utils";
 import { useTranslation } from "next-i18next";
 import { FC, memo } from "react";
 import { IoBodyOutline, IoBookOutline, IoCalendarNumberOutline, IoMapOutline } from "react-icons/io5";
@@ -30,7 +31,7 @@ export const ProfileInfo: FC = memo(() => {
           <IoCalendarNumberOutline />
           <div className="vertical-group">
             <span className="text-pale">{t('birthday')}</span>
-            <span className="label">10.03.1980</span>
+            <span className="label">{getFormattedDate(user.date_of_birth)}</span>
           </div>
         </li>
         <li className="horizontal-group">

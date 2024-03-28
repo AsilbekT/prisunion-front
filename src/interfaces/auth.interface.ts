@@ -2,12 +2,16 @@ export interface IPrisonerContactForm {
   firstName: string;
   lastName: string;
   address: string;
+  passportSerial: string;
+  passportId: string;
 }
 
 export interface IPrisonerForm {
   prisonerFirstName: string;
   prisonerLastName: string;
   prisonerRelationship: string;
+  passportSerial: string;
+  passportId: string;
 }
 
 export interface ITokenPairs {
@@ -21,6 +25,7 @@ export interface IPrisonerContact {
   prisoner_full_name: string;
   full_name: string;
   relationship: string;
+  date_of_birth: string;
   phone_verified: boolean;
   prisoner: null | number;
   phone_number: string;

@@ -11,6 +11,8 @@ import { fetchData } from '@/utils/fetch.utils';
 import { inter } from '@/utils/media.utils';
 import { appWithTranslation } from 'next-i18next';
 import App, { AppContext, AppInitialProps, AppProps } from 'next/app';
+import Script from 'next/script';
+import "react-datepicker/dist/react-datepicker.css";
 
 interface GlobalProps {
   categories: ICategory[];
@@ -24,6 +26,7 @@ function MyApp({
 }: PageProps) {
   return (
     <div className={inter.className}>
+      <Script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></Script>
       <AuthContextProvider>
         <GlobalContextProvider categories={categories}>
           <FavoritesContextProvider>

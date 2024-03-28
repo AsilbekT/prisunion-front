@@ -5,6 +5,7 @@ import { IFetchResponse } from "@/interfaces/utils.interface";
 import { useRouter } from "next/router";
 import { FC, memo, useCallback, useMemo, useState } from "react";
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { EmptyContent } from "../EmptyContent/EmptyContent";
 import { ProductCard } from "../ProductCard/ProductCard";
 import { SectionHead } from "../SectionHead";
 import styles from './CategoryProducts.module.scss';
@@ -23,10 +24,6 @@ export const CategoryProducts: FC<CategoryProductsProps> = memo(
 
     const categoryId = router.query.id;
     const isPopularCategory = categoryId === 'popular';
-
-    // useEffect(() => {
-    //   setQueryParams({ page: page.toString() });
-    // }, [page]);
 
     const loadMoreProducts = useCallback(async () => {
       if (
@@ -69,15 +66,21 @@ export const CategoryProducts: FC<CategoryProductsProps> = memo(
           onGoBack={() => router.push('/')}
         />
         <div className="container">
-          <InfiniteScroll
-            className={styles.list}
-            hasMore={fetch.data?.pagination?.next || false}
-            next={loadMoreProducts}
-            loader=""
-            dataLength={products.length}
-          >
-            {productEls}
-          </InfiniteScroll>
+          {products.length > 0 ? (
+            <InfiniteScroll
+              className={styles.list}
+              hasMore={fetch.data?.pagination?.next || false}
+              next={loadMoreProducts}
+              loader=""
+              dataLength={products.length}
+            >
+              {productEls}
+            </InfiniteScroll>
+          ) : (
+            <div className="abs-center">
+              <EmptyContent />
+            </div>
+          )}
         </div>
       </section>
     );

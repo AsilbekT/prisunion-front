@@ -35,3 +35,10 @@
 .w-f {
   width: 100%;
 }
+
+.float-hidden {
+  position: fixed;
+  top: -200vh;
+  left: -200vw;
+  z-index: -100;
+}

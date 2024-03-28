@@ -27,16 +27,16 @@ export const LoginConfirm: FC = memo(() => {
     restart(getFutureTimeBySeconds(60));
   }, [restart]);
 
-  const onRequestCode = useCallback(async () => {
+  const onRequestCode = useCallback(async (pathName = 'resend_code') => {
     try {
       if (isRunning) return;
       setLoading(true);
 
       const response = await fetch.makeRequest({
-        url: 'api/contact/resend_code/',
+        url: `api/contact/${pathName}/`,
         options: {
           body: JSON.stringify({
-            phone_number: phone.replace('+', ''),
+            phone_number: phone.replace(/\s/g, '').replace('+', ''),
           }),
           method: 'POST',
           headers: {
@@ -48,7 +48,7 @@ export const LoginConfirm: FC = memo(() => {
       if (response?.status === 'success') {
         restart(getFutureTimeBySeconds(60));
       } else if (response?.status === 'error') {
-        setError(t('somethingWrong'));
+        onRequestCode('login/request');
       }
     } catch (er) {
       setError(t('somethingWrong'));
@@ -83,7 +83,9 @@ export const LoginConfirm: FC = memo(() => {
       } else if (response.data?.access && response.data.refresh) {
         setTokens(response.data);
         setAuthTokens(response.data);
-        router.replace('/');
+        setTimeout(() => {
+          window.location.pathname = '/';
+        }, 500);
       }
     } else if (
       response?.status === 'error' &&
@@ -131,7 +133,7 @@ export const LoginConfirm: FC = memo(() => {
             : (
               <button
                 type="button"
-                onClick={onRequestCode}
+                onClick={() => onRequestCode()}
                 className="blue-link"
                 title={t('resend')}
               >

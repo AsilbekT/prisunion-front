@@ -42,7 +42,7 @@ export const useFetch = <T = any>(
         }
 
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/${url}`,
+          `${process.env.NEXT_PUBLIC_API_URL}/${i18n.language}/${url}`,
           {
             ...options,
             headers,
@@ -50,11 +50,6 @@ export const useFetch = <T = any>(
         );
 
         if (!response.ok) {
-          if (response.status === 401 || response.status === 403) {
-            logout();
-            router.push('/login');
-            return;
-          }
           return await response.json();
         }
 

@@ -44,7 +44,7 @@ export const getServerSideProps: GetServerSideProps<ProductsPageProps> = async (
   return {
     props: {
       firstProducts,
-      category: category?.data!,
+      category: category?.data! || null,
       ...(await serverSideTranslations(locale, ['common'])),
     }
   };

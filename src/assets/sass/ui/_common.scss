@@ -40,6 +40,18 @@
   }
 }
 
+.react-datepicker-wrapper {
+  width: 100%;
+
+  input {
+    width: 100%;
+  }
+}
+
+.react-datepicker {
+  transform: scale(1.5);
+}
+
 .nine-sixteen {
   padding-bottom: 177.78%;
 }

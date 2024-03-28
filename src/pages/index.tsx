@@ -1,11 +1,9 @@
 import Banners from "@/components/Home/Banners/Banners";
-import MobileBanners from "@/components/Home/MobileBanners/MobileBanners";
 import { Layout } from "@/components/Layout";
 import PageHead from "@/components/PageHead";
 import { ProductsByCategory } from "@/components/ProductsByCategory";
 import { ProductsGroup } from "@/components/ProductsGroup/ProductsGroup";
 import SafeHydrate from "@/components/SafeHydrate";
-import { useGlobalContext } from "@/contexts/GlobalContext";
 import { IBanner } from "@/interfaces/banners.interface";
 import { IProduct } from "@/interfaces/products.interface";
 import { fetchData } from "@/utils/fetch.utils";
@@ -20,17 +18,13 @@ interface IHomePageProps {
 }
 
 export default function Home({ banners, popularProducts }: IHomePageProps) {
-  const { media } = useGlobalContext();
   const { t } = useTranslation();
 
   return (
     <PageHead title={t('pages.home.title')} description={t('pages.home.description')}>
       <Layout>
         <SafeHydrate>
-          {media.tablet
-            ? <MobileBanners banners={banners} />
-            : <Banners banners={banners} />
-          }
+          <Banners banners={banners} />
         </SafeHydrate>
         <ProductsGroup
           title="Ommabop mahsulotlar"
@@ -55,6 +49,6 @@ export const getStaticProps: GetStaticProps<IHomePageProps> = async (ctx) => {
       popularProducts: products?.data || [],
       ...(await serverSideTranslations(locale!, ['common']))
     },
-    revalidate: 10000,
+    revalidate: 20,
   };
 };

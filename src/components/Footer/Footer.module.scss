@@ -1,0 +1,65 @@
+@use '../../assets/sass/abstracts/mixins' as *;
+
+.footer {
+  background: var(--primary-bg);
+  padding: 1.5rem 0;
+
+  figure {
+    width: 15rem;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  a {
+    font-weight: 400;
+    gap: 1rem;
+  }
+
+  & > div {
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  @include respond('tablet') {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    & > div {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.iconWrapper {
+  border-radius: 50%;
+  background: var(--primary-color-light);
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 4rem;
+
+  svg {
+    width: 1.75rem;
+    stroke: var(--primary-color);
+    height: 1.75rem;
+  }
+}
+
+.asPage .content {
+  & > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}

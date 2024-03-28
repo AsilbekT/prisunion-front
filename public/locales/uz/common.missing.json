@@ -29,5 +29,7 @@
     "notification": {
       "description": "pages.notification.description"
     }
-  }
+  },
+  "phone": "phone",
+  "email": "email"
 }
