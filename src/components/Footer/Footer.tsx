@@ -42,7 +42,7 @@ export const Footer: FC<FooterProps> = memo(({ asPage }) => {
               </span>
               {PHONE_NUMBER}
             </a>
-            <a href={`emailto:${EMAIL}`} className="blue-link horizontal-group" download title={t('email')}>
+            <a href={`mailto:${EMAIL}`} className="blue-link horizontal-group" download title={t('email')}>
               <span className={styles.iconWrapper}>
                 <MdOutlineMailOutline />
               </span>
