@@ -60,3 +60,5 @@ export const Footer: FC<FooterProps> = memo(({ asPage }) => {
     </footer>
   );
 });
+
+Footer.displayName = 'Footer';

@@ -11,6 +11,9 @@
     "transactions": {
       "title": "pages.transactions.title",
       "description": "pages.transactions.description"
+    },
+    "notification": {
+      "description": "pages.notification.description"
     }
   }
 }
