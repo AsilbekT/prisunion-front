@@ -33,7 +33,7 @@ export const CellInput: FC<CellInputProps> = (props) => {
     return Array.from(Array(cellsCount)).map((_, index) => {
       return (
         <input
-          ref={el => inputRefEls.current[index] = el!}
+          ref={el => inputRefEls.current[index] = el as any}
           key={index}
           type="number"
           className="input"
