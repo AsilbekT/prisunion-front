@@ -26,7 +26,7 @@ const LoginContext = createContext({} as ILoginContext);
 export const useLoginContext = () => useContext(LoginContext);
 
 export const LoginContextProvider: FC<LoginContextProviderProps> = ({ children, }) => {
-  const [phase, setPhase] = useState(2);
+  const [phase, setPhase] = useState(0);
   const [phone, setPhone] = useState('+998 ');
 
   const prisonerContactForm = useForm<IPrisonerContactForm>({
