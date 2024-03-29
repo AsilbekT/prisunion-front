@@ -165,6 +165,14 @@ export const PersonalInfo: FC = memo(() => {
           <DatePicker
             className="input"
             locale={i18n.language}
+            showYearDropdown
+            showIcon={false}
+            preventOpenOnFocus
+            dateFormat="dd.MM.yyyy"
+            dateFormatCalendar="LLLL"
+            showPopperArrow={false}
+            dropdownMode="select"
+            onFocus={(e) => e.target.readOnly = true}
             selected={prisonerContactBirthday}
             onChange={(d) => setPrisonerContactBirthday(d!)}
           />
@@ -231,6 +239,14 @@ export const PersonalInfo: FC = memo(() => {
             className="input"
             locale={i18n.language}
             selected={prisonerBirthday}
+            showYearDropdown
+            showIcon={false}
+            preventOpenOnFocus
+            dateFormat="dd.MM.yyyy"
+            dateFormatCalendar="LLLL"
+            showPopperArrow={false}
+            dropdownMode="select"
+            onFocus={(e) => e.target.readOnly = true}
             onChange={(d) => setPrisonerBirthday(d!)}
           />
           <CalendarIcon />
