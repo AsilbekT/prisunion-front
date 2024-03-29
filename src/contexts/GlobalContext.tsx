@@ -78,6 +78,12 @@ export const GlobalContextProvider: FC<GlobalContextProviderProps> =
           appId: "e61b716e-c22d-4aaf-96cb-dbd8ee4327ed",
         });
       });
+
+      if (navigator.userAgent.indexOf('iPhone') > -1) {
+        document
+          .querySelector("[name=viewport]")!
+          .setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1");
+      }
     }, []);
 
     useEffect(() => {

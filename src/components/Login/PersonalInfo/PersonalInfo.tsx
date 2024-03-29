@@ -71,10 +71,16 @@ export const PersonalInfo: FC = memo(() => {
     formData.append('prisoner_full_name', `${prisonerValues.prisonerLastName} ${prisonerValues.prisonerFirstName}`);
     formData.append('relationship', prisonerValues.prisonerRelationship);
     formData.append('phone_number', phone.replace('+', '').replace(/\s/g, ''));
-    formData.append('prisoner_passport_id', `${prisonerValues.passportSerial}${prisonerValues.passportId}`);
+    formData.append(
+      'prisoner_passport_id',
+      `${prisonerValues.passportSerial}${prisonerValues.passportId}`.toUpperCase()
+    );
     formData.append('prisoner_date_of_birth', getPayloadDate(prisonerBirthday));
     formData.append('date_of_birth', getPayloadDate(prisonerContactBirthday));
-    formData.append('passport_id', `${prisonerContactValues.passportSerial}${prisonerContactValues.passportId}`);
+    formData.append(
+      'passport_id',
+      `${prisonerContactValues.passportSerial}${prisonerContactValues.passportId}`.toUpperCase()
+    );
 
     const response = await fetch.makeRequest({
       url: 'api/create_prisoner_contact/',

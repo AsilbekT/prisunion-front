@@ -67,7 +67,7 @@ export const CheckoutModal: FC = memo(() => {
             value={cardNumber}
             onChange={(e) => onCardNumberChange(e.target.value)}
             type="number"
-            placeholder="8600570444171903"
+            placeholder="1234567890123456"
           />
         </label>
         <label className="input-wrapper">
