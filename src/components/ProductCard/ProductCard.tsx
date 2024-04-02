@@ -79,7 +79,7 @@ export const ProductCard: FC<ProductCardProps> = memo(({ product, isModal }) => 
           <img src={product.image} alt={product.name} />
         </figure>
         <span className="title">{product.name}</span>
-        <span className="price">{getPrice(product.price)} UZS</span>
+        <span className="price">{getPrice(product.price)}</span>
       </Link>
       <SafeHydrate>
         {addingToCart ? (
