@@ -2,8 +2,9 @@ import { useFetch } from "@/hooks/useFetch";
 import { ICategory } from "@/interfaces/category.interface";
 import { IProduct } from "@/interfaces/products.interface";
 import { IFetchResponse } from "@/interfaces/utils.interface";
+import { filterDuplicatesBy } from "@/utils/array.utils";
 import { useRouter } from "next/router";
-import { FC, memo, useCallback, useMemo, useState } from "react";
+import { FC, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { EmptyContent } from "../EmptyContent/EmptyContent";
 import { ProductCard } from "../ProductCard/ProductCard";
@@ -21,9 +22,33 @@ export const CategoryProducts: FC<CategoryProductsProps> = memo(
     const fetch = useFetch(!firstProducts, firstProducts);
     const [products, setProducts] = useState<IProduct[]>(firstProducts?.data || []);
     const [page, setPage] = useState(2);
+    const firstFetchedRef = useRef(false);
 
     const categoryId = router.query.id;
     const isPopularCategory = categoryId === 'popular';
+
+    const fetchProducts = useCallback((page: number) => {
+      return fetch.makeRequest({
+        url:
+          isPopularCategory
+            ? `products/?trending=true&page=${page}`
+            : `productcategories/${categoryId}/products/?page=${page}`,
+      })
+    }, [isPopularCategory, fetch.makeRequest, categoryId]);
+
+    useEffect(() => {
+      if (firstFetchedRef.current) {
+        setPage(1);
+        fetch.setData(null);
+        fetchProducts(1).then(response => {
+          if (response?.data) {
+            setProducts(response?.data);
+          }
+        });
+      } else {
+        firstFetchedRef.current = true;
+      }
+    }, [fetchProducts]);
 
     const loadMoreProducts = useCallback(async () => {
       if (
@@ -32,24 +57,17 @@ export const CategoryProducts: FC<CategoryProductsProps> = memo(
       ) {
         return;
       }
-      const response = await fetch.makeRequest({
-        url:
-          isPopularCategory
-            ? `products/?trending=true&page=${page}`
-            : `productcategories/${categoryId}/products/?page=${page}`,
-      });
-      const newProducts = response?.data;
+      const newProducts = (await fetchProducts(page))?.data;
       if (newProducts?.length) {
-        setProducts(prev => ([...prev, ...newProducts]));
+        setProducts(prev => (filterDuplicatesBy([...prev, ...newProducts], 'id')));
         setPage(p => p + 1);
       }
     }, [
       categoryId,
-      page,
       fetch.data,
-      isPopularCategory,
-      fetch.makeRequest,
-      fetch.loading
+      fetchProducts,
+      fetch.loading,
+      page
     ]);
 
     const productEls = useMemo(() => {

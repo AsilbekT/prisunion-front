@@ -9,3 +9,10 @@ export const groupArrayBy = <T = unknown[]>(
   }
   return groupedArr;
 };
+
+export const filterDuplicatesBy = <T extends object>(
+  array: T[],
+  prop: keyof T
+) => {
+  return Array.from(new Map(array.map((item) => [item[prop], item])).values());
+};
