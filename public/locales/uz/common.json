@@ -78,10 +78,10 @@
     "other": "Boshqa"
   },
   "status": {
-    "Pending": "Tekshirilmoqda",
-    "processed": "Qabul qilindi",
-    "delivered": "Yetkazib berilmoqda",
-    "done": "Yetkazib berildi"
+    "PENDING": "Tekshirilmoqda",
+    "PROCESSED": "Qabul qilindi",
+    "DELIVERED": "Yetkazib berilmoqda",
+    "DONE": "Yetkazib berildi"
   },
   "pages": {
     "home": {

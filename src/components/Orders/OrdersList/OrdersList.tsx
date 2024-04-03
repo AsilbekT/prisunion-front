@@ -46,7 +46,8 @@ export const OrdersList: FC = memo(() => {
 
   const orderEls = useMemo(() => {
     return orders.map((order) => {
-      const status = STATUS_LABELS[order.status as keyof typeof STATUS_LABELS];
+      const orderStatus = order.status?.toUpperCase() || '';
+      const status = STATUS_LABELS[orderStatus as keyof typeof STATUS_LABELS];
       return (
         <Link
           href={`/profile/orders/${order.id}`}
@@ -59,7 +60,13 @@ export const OrdersList: FC = memo(() => {
           </div>
           <div>
             <span className="text-pale">{getFormattedDate(order.created_at, i18n.language)}</span>
-            <Badge content={t(`status.${order.status}`)} type={status.type as any} noIcon />
+            {status && (
+              <Badge
+                content={t(`status.${orderStatus}`)}
+                type={status.type as any}
+                noIcon
+              />
+            )}
           </div>
         </Link>
       );

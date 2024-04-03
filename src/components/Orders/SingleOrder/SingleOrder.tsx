@@ -75,7 +75,9 @@ export const SingleOrder: FC = memo(() => {
   const statusEls = useMemo(() => {
     if (!orderData) return null;
 
-    const activeStatusIndex = STATUS_KEYS.findIndex((key) => key === orderData.status);
+    const activeStatusIndex = STATUS_KEYS.findIndex((key) =>
+      key === (orderData.status?.toUpperCase() || '')
+    );
 
     return STATUS_KEYS.map((status, index) => {
       const isActive = index <= activeStatusIndex;
@@ -92,7 +94,7 @@ export const SingleOrder: FC = memo(() => {
                 : (isActive && Icon ? <Icon /> : <DisabledStatusIcon />)
               }
             </div>
-            {t(`status.${statusObject.label}`)}
+            {t(`status.${status}`)}
           </div>
           {previouslyCompletedStatus && (
             <span className="label">

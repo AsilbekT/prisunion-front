@@ -8,7 +8,7 @@ import styles from './ProfileInfo.module.scss';
 
 export const ProfileInfo: FC = memo(() => {
   const { prisonerContactFetch } = useAuthContext();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const user = prisonerContactFetch.data
 
@@ -31,7 +31,11 @@ export const ProfileInfo: FC = memo(() => {
           <IoCalendarNumberOutline />
           <div className="vertical-group">
             <span className="text-pale">{t('birthday')}</span>
-            <span className="label">{getFormattedDate(user.date_of_birth)}</span>
+            <span className="label">{getFormattedDate(user.date_of_birth, i18n.language, {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}</span>
           </div>
         </li>
         <li className="horizontal-group">

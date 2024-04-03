@@ -4,10 +4,11 @@
   left: 0;
   width: 100%;
   background: var(--primary-bg);
-  min-height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--header-height));
   z-index: 1;
   padding: 2rem;
   box-shadow: 0 0 1rem rgba(#000, 0.1);
+  overflow-y: auto;
 }
 
 .body {
@@ -60,9 +61,24 @@
     }
   }
 
+  &.noIcon {
+    svg {
+      fill: var(--primary-color);
+      color: var(--primary-color);
+    }
+  }
+
   &.clothes {
     svg {
       fill: rgb(100, 100, 180);
+      color: rgb(100, 100, 180);
+    }
+  }
+
+  &.oziq-ovqatlar {
+    svg {
+      fill: orangered;
+      color: orangered;
     }
   }
 

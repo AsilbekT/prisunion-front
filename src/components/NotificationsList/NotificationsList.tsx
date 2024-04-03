@@ -13,7 +13,7 @@ import styles from './NotificationsList.module.scss';
 
 export const NotificationsList: FC = () => {
   const { notifications, notificationsLoading } = useGlobalContext();
-  const { t } = useTranslation();
+  const { t, i18n, } = useTranslation();
   const [activeNotication, setActiveNotification] = useState<INotification | null>(null);
 
   const onOpenNotification = useCallback((notification: INotification) => {
@@ -50,7 +50,11 @@ export const NotificationsList: FC = () => {
   return (
     <section className={styles.notifications}>
       {activeNotication && (
-        <Modal open={Boolean(activeNotication)} contentClassName={styles.modal} onClose={() => setActiveNotification(null)}>
+        <Modal
+          open={Boolean(activeNotication)}
+          contentClassName={styles.modal}
+          onClose={() => setActiveNotification(null)}
+        >
           <div className={styles.icon}>
             <BellIcon />
           </div>
@@ -59,7 +63,7 @@ export const NotificationsList: FC = () => {
               {activeNotication.title}
             </h6>
             <p className="text">{activeNotication.message}</p>
-            <span className="text-pale">{getFormattedDate(activeNotication.created_at)}</span>
+            <span className="text-pale">{getFormattedDate(activeNotication.created_at, i18n.language)}</span>
           </div>
         </Modal>
       )}

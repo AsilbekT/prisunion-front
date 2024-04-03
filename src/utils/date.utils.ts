@@ -4,7 +4,11 @@ export const getFutureTimeBySeconds = (seconds: number) => {
   return time;
 };
 
-export const getFormattedDate = (isoDate: string, locale?: string) => {
+export const getFormattedDate = (
+  isoDate: string,
+  locale?: string,
+  options?: Intl.DateTimeFormatOptions
+) => {
   const date = new Date(isoDate);
   const userLocale =
     locale || navigator.language || (navigator as any).userLanguage;
@@ -15,6 +19,7 @@ export const getFormattedDate = (isoDate: string, locale?: string) => {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
+    ...(options || {}),
   }).format(date);
 };
 

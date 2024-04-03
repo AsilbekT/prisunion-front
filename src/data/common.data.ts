@@ -14,22 +14,22 @@ export const PRISONER_RELATIONSHIP_OPTIONS = [
 export const FAQ_ITEMS = ['howDownload', 'howTrack', 'howRegister'];
 
 export const STATUS_LABELS = {
-  Pending: {
+  PENDING: {
     label: 'Pending',
     type: 'warning',
     icon: CheckingIcon,
   },
-  processed: {
+  PROCESSED: {
     label: 'processed',
     type: 'info',
     icon: CompleteIcon,
   },
-  delivered: {
+  DELIVERED: {
     label: 'delivered',
     type: 'info',
     icon: CheckingIcon,
   },
-  done: {
+  DONE: {
     label: 'done',
     type: 'success',
     icon: CompleteTwiceIcon,

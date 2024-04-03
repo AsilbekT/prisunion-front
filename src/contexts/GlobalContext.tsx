@@ -89,7 +89,7 @@ export const GlobalContextProvider: FC<GlobalContextProviderProps> =
     useEffect(() => {
       setShowFloatinMenu(false);
       setActiveProductView(null);
-    }, [router.pathname]);
+    }, [router.query, router.pathname]);
 
     useHideScrollbar(Boolean(activeProductView));
 

@@ -4,9 +4,11 @@ import classNames from "classnames";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { ComponentType, FC, memo, useCallback, useMemo, useState } from "react";
+import { BiCategory } from "react-icons/bi";
 import { FcBiohazard, FcBiomass, FcStackOfPhotos } from "react-icons/fc";
 import { GiClothes, GiMeatCleaver, GiShinyApple } from "react-icons/gi";
 import { IoCloseOutline } from "react-icons/io5";
+import { PiCarrot } from "react-icons/pi";
 import styles from './FloatingMenu.module.scss';
 
 const ICONS_MAP: Record<string, ComponentType> = {
@@ -15,7 +17,8 @@ const ICONS_MAP: Record<string, ComponentType> = {
   cigares: FcBiohazard,
   fruits: GiShinyApple,
   clothes: GiClothes,
-  'hygiene-products': FcBiomass
+  'hygiene-products': FcBiomass,
+  'oziq-ovqatlar': PiCarrot
 };
 
 export const FloatingMenu: FC = memo(() => {
@@ -31,12 +34,14 @@ export const FloatingMenu: FC = memo(() => {
           key={category.id}
           onMouseEnter={() => setActiveCategory(category)}
           onMouseLeave={() => setActiveCategory(null)}
-          className={classNames(styles.category, styles[category.icon_class || ''])}
+          className={classNames(
+            styles.category,
+            styles[category.icon_class || ''],
+            { [styles.noIcon]: !Icon }
+          )}
         >
           <Link className="horizontal-group" href={`/categories/${category.id}/products`}>
-            {Icon && (
-              <span><Icon /></span>
-            )}
+            <span>{Icon ? <Icon /> : <BiCategory />}</span>
             {category.name}
           </Link>
         </li>
