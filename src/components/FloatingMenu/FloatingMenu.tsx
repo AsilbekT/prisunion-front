@@ -1,3 +1,4 @@
+import groceriesImg from '@/assets/images/grocery.png';
 import { useGlobalContext } from "@/contexts/GlobalContext";
 import { ICategory } from "@/interfaces/category.interface";
 import classNames from "classnames";
@@ -8,7 +9,6 @@ import { BiCategory } from "react-icons/bi";
 import { FcBiohazard, FcBiomass, FcStackOfPhotos } from "react-icons/fc";
 import { GiClothes, GiMeatCleaver, GiShinyApple } from "react-icons/gi";
 import { IoCloseOutline } from "react-icons/io5";
-import { PiCarrot } from "react-icons/pi";
 import styles from './FloatingMenu.module.scss';
 
 const ICONS_MAP: Record<string, ComponentType> = {
@@ -18,7 +18,7 @@ const ICONS_MAP: Record<string, ComponentType> = {
   fruits: GiShinyApple,
   clothes: GiClothes,
   'hygiene-products': FcBiomass,
-  'oziq-ovqatlar': PiCarrot
+  'oziq-ovqatlar': () => <img src={groceriesImg.src} alt="Groceries" />
 };
 
 export const FloatingMenu: FC = memo(() => {
