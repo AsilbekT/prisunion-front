@@ -61,7 +61,7 @@ const Banners: FC<BannerProps> = memo(({ banners }) => {
           slidesPerView={1}
           breakpoints={{
             1025: {
-              slidesPerView: 1.875,
+              slidesPerView: 1.9,
               spaceBetween: 20,
               centeredSlides: true
             }
