@@ -13,9 +13,10 @@ const PageHead: FC<PageHeadProps> = (props) => {
   return (
     <React.Fragment>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title}</title>
         <meta name="description" content={description} />
-        {robots && <meta name="robots" content={robots} />  }
+        {robots && <meta name="robots" content={robots} />}
       </Head>
       {children}
     </React.Fragment>
