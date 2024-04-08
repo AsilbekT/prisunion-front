@@ -108,9 +108,9 @@ const CartDrawer: FC = memo(() => {
                   <WarningIcon />
                 </BubbleText>
                 <span className='text-pale'>{t('limit')}</span>
-                <span className='text-bold'>{totalWeight.toFixed(2)}/{MAX_WEIGHT}kg</span>
+                <span className='text-bold'>{(totalWeight / 100).toFixed(2)}/{(MAX_WEIGHT / 100)}kg</span>
                 <div className='progress'>
-                  <span style={{ width: `${+totalWeight / MAX_WEIGHT * 100}%` }} />
+                  <span style={{ width: `${+(totalWeight / 100) / (MAX_WEIGHT / 100) * 100}%` }} />
                 </div>
               </div>
               <div className={styles.totalsContainer}>

@@ -1,6 +1,6 @@
 import { useAuthContext } from '@/contexts/AuthContext';
+import { setAuthTokens } from '@/utils/auth.utils';
 import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 
 interface IFetchOptions {
@@ -16,9 +16,8 @@ export const useFetch = <T = any>(
   const [data, setData] = useState<T | null>(initialState || null);
   const [loading, setLoading] = useState(initiallyLoading);
   const [error, setError] = useState('');
-  const { tokens, logout } = useAuthContext();
+  const { tokens, logout, setTokens } = useAuthContext();
   const { i18n } = useTranslation();
-  const router = useRouter();
 
   const makeRequest = useCallback(
     async ({
@@ -50,6 +49,11 @@ export const useFetch = <T = any>(
         );
 
         if (!response.ok) {
+          if (response.status === 401 || response.status === 403) {
+            setAuthTokens(null);
+            setTokens(null);
+            return makeRequest({ url, options, dataAt });
+          }
           return await response.json();
         }
 
@@ -60,10 +64,8 @@ export const useFetch = <T = any>(
         setData(data);
         return data as T;
       } catch (er) {
-        console.log('Error fetching data', JSON.stringify(er));
-        if (er instanceof Error) {
-          setError(er.message);
-        }
+        const errorString = JSON.stringify(er);
+        console.log('Error fetching data', errorString);
       } finally {
         setLoading(false);
       }

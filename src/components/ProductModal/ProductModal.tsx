@@ -14,13 +14,17 @@ import { ModalSpinner } from "../Spinner";
 import styles from './ProductModal.module.scss';
 
 const ProductModal: FC = memo(() => {
-  const { activeProductView: productId, setActiveProductView, } = useGlobalContext();
+  const {
+    activeProductView: productId,
+    setActiveProductView,
+    setError
+  } = useGlobalContext();
   const { onCreateCheckout, checkoutCurrentProduct } = useCheckoutContext();
   const {
     makeRequest,
     data: product,
     loading,
-    setLoading
+    setLoading,
   } = useFetch<IProduct>(true);
   const { changeFavoriteItem } = useFavoritesContext();
   const { addCartItem, cart, changeCartItem, changeItemByProductId } = useCart();
@@ -37,11 +41,14 @@ const ProductModal: FC = memo(() => {
       makeRequest({
         url: `products/${productId}/`,
         dataAt: ['data']
+      }).catch((r) => {
+        setError(t('somethingWrong'));
+        setActiveProductView(null);
       });
     } else {
       setLoading(false);
     }
-  }, [productId,]);
+  }, [productId]);
 
   useEffect(() => {
     setQuantity(currentCartItem?.quantity || 1);

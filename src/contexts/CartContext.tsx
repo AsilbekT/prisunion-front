@@ -35,7 +35,7 @@ interface ICart {
   ) => void;
 }
 
-const MAX_WEIGHT = 12;
+const MAX_WEIGHT = 1200;
 
 interface CartProviderProps {
   children: ReactNode;
@@ -68,6 +68,7 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
   }, [cart]);
 
   const addCartItem = useCallback((product: IProduct, quantity: number) => {
+    console.log({ totalWeight })
     if (totalWeight >= MAX_WEIGHT) return;
     setCart(prev => {
       const productExists = prev.find(({ product: { id } }) => product.id === id);
