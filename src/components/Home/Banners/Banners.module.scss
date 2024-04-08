@@ -32,11 +32,6 @@
 .container {
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  width: 60%;
-
-  @include respond('tablet') {
-    width: 100%;
-  }
 }
 
 .banners {
