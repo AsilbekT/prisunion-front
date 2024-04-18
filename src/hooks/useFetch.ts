@@ -49,7 +49,10 @@ export const useFetch = <T = any>(
         );
 
         if (!response.ok) {
-          if (response.status === 401 || response.status === 403) {
+          if (
+            tokens?.access &&
+            (response.status === 401 || response.status === 403)
+          ) {
             setAuthTokens(null);
             setTokens(null);
             return makeRequest({ url, options, dataAt });
