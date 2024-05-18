@@ -48,13 +48,20 @@ MyApp.getInitialProps = async (
   context: AppContext
 ): Promise<GlobalProps & AppInitialProps> => {
   const ctx = await App.getInitialProps(context);
-  const locale = context.ctx.locale || context.ctx.defaultLocale;
-  const productCategories = await fetchData('productcategories', undefined, locale);
+  try {
+    const locale = context.ctx.locale || context.ctx.defaultLocale;
+    const productCategories = await fetchData('productcategories', undefined, locale);
 
-  return {
-    ...ctx,
-    categories: productCategories?.data || [],
-  };
+    return {
+      ...ctx,
+      categories: productCategories?.data || [],
+    };
+  } catch {
+    return {
+      ...ctx,
+      categories: [],
+    };
+  }
 }
 
 export default appWithTranslation(MyApp);

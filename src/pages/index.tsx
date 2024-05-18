@@ -4,6 +4,7 @@ import PageHead from "@/components/PageHead";
 import { ProductsByCategory } from "@/components/ProductsByCategory";
 import { ProductsGroup } from "@/components/ProductsGroup/ProductsGroup";
 import SafeHydrate from "@/components/SafeHydrate";
+import { homeBanners } from "@/data/dummy.data";
 import { IBanner } from "@/interfaces/banners.interface";
 import { IProduct } from "@/interfaces/products.interface";
 import { fetchData } from "@/utils/fetch.utils";
@@ -40,15 +41,26 @@ export default function Home({ banners, popularProducts }: IHomePageProps) {
 
 export const getStaticProps: GetStaticProps<IHomePageProps> = async (ctx) => {
   const locale = ctx.locale || ctx.defaultLocale;
-  const banners = await fetchData('banners', undefined, locale);
-  const products = await fetchData('products/?trending=true', undefined, locale);
+  const localesData = await serverSideTranslations(locale!, ['common']);
+  try {
+    const banners = await fetchData('banners', undefined, locale);
+    const products = await fetchData('products/?trending=true', undefined, locale);
 
-  return {
-    props: {
-      banners: banners?.data || [],
-      popularProducts: products?.data || [],
-      ...(await serverSideTranslations(locale!, ['common']))
-    },
-    revalidate: 20,
-  };
+    return {
+      props: {
+        banners: banners?.data || homeBanners,
+        popularProducts: products?.data || [],
+        ...localesData
+      },
+      revalidate: 20,
+    };
+  } catch {
+    return {
+      props: {
+        banners: homeBanners,
+        popularProducts: [],
+        ...localesData
+      }
+    }
+  }
 };
