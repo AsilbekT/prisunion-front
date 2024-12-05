@@ -1,15 +1,15 @@
-import { useAuthContext } from "@/contexts/AuthContext";
-import { useGlobalContext } from "@/contexts/GlobalContext";
-import { ELocales } from "@/interfaces/locales.interface";
-import { useTranslation } from "next-i18next";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { FC, ReactNode, memo, useCallback, useEffect, useState } from "react";
-import { BiChevronRight } from "react-icons/bi";
+import { useAuthContext } from '@/contexts/AuthContext';
+import { useGlobalContext } from '@/contexts/GlobalContext';
+import { ELocales } from '@/interfaces/locales.interface';
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { FC, ReactNode, memo, useCallback, useEffect, useState } from 'react';
+import { BiChevronRight } from 'react-icons/bi';
 import { BsBell } from 'react-icons/bs';
-import { GoDatabase } from "react-icons/go";
-import { IoLogOutOutline } from "react-icons/io5";
-import { Badge } from "../Badge";
+import { GoDatabase } from 'react-icons/go';
+import { IoLogOutOutline } from 'react-icons/io5';
+import { Badge } from '../Badge';
 import {
   ClockIcon,
   GlobeIcon,
@@ -18,22 +18,23 @@ import {
   TelegramIcon,
   UserGroup,
   UserIcon,
-  WarningIcon
-} from "../CustomIcons";
-import Modal from "../Modal/Modal";
-import { ProfileInfo } from "../ProfileInfo/ProfileInfo";
-import { ModalSpinner } from "../Spinner";
+  WarningIcon,
+} from '../CustomIcons';
+import Modal from '../Modal/Modal';
+import { ProfileInfo } from '../ProfileInfo/ProfileInfo';
+import { ModalSpinner } from '../Spinner';
 import styles from './ProfileLayout.module.scss';
 
 interface ProfileLayoutProps {
   children: ReactNode;
 }
 
-const CONTACT_URL = 'https://t.me/asilbek_turgunboev';
+const CONTACT_URL = 'https://t.me/+998932700003';
 
-export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
+export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children }) => {
   const { prisonerContactFetch, logout, isApproved } = useAuthContext();
-  const { media, showLanguages, setShowLanguages, notifications } = useGlobalContext();
+  const { media, showLanguages, setShowLanguages, notifications } =
+    useGlobalContext();
   const [showPersonalInfo, setShowPersonalInfo] = useState(false);
   const router = useRouter();
   const { t, i18n } = useTranslation();
@@ -80,14 +81,10 @@ export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
                   <div className={styles.user}>
                     <UserIcon />
                   </div>
-                  <h1 className="title-lg">
-                    {user.full_name}
-                  </h1>
+                  <h1 className="title-lg">{user.full_name}</h1>
                   <Badge
                     content={
-                      isApproved
-                        ? t('approved')
-                        : t('approvedStatusNone')
+                      isApproved ? t('approved') : t('approvedStatusNone')
                     }
                     type={isApproved ? 'success' : 'fail'}
                   />
@@ -109,7 +106,10 @@ export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
                 <div className={styles.body}>
                   <ul>
                     <li>
-                      <a href={`tel:+${user.phone_number}`} title={t('phoneNumber')}>
+                      <a
+                        href={`tel:+${user.phone_number}`}
+                        title={t('phoneNumber')}
+                      >
                         <span className="horizontal-group label">
                           <PhoneIcon />
                           {t('phoneNumber')}
@@ -122,7 +122,9 @@ export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
                     </li>
                     <li>
                       <Link
-                        data-active={router.pathname.includes('/profile/orders')}
+                        data-active={router.pathname.includes(
+                          '/profile/orders'
+                        )}
                         href="/profile/orders"
                         title={t('orderHistory')}
                       >
@@ -147,7 +149,12 @@ export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
                       </Link>
                     </li> */}
                     <li>
-                      <a href={CONTACT_URL} rel="noopener noreferrer" target="_blank" title={t('contactUs')}>
+                      <a
+                        href={CONTACT_URL}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        title={t('contactUs')}
+                      >
                         <span className="horizontal-group label">
                           <TelegramIcon />
                           {t('contactUs')}
@@ -159,10 +166,18 @@ export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
                       <Link
                         href="/profile/notifications"
                         title={t('notifications')}
-                        data-active={router.pathname === '/profile/notifications'}
+                        data-active={
+                          router.pathname === '/profile/notifications'
+                        }
                       >
                         <span className="horizontal-group label">
-                          <span data-items={notifications.length ? notifications.length : undefined}>
+                          <span
+                            data-items={
+                              notifications.length
+                                ? notifications.length
+                                : undefined
+                            }
+                          >
                             <BsBell />
                           </span>
                           {t('notifications')}
@@ -224,9 +239,7 @@ export const ProfileLayout: FC<ProfileLayoutProps> = memo(({ children, }) => {
               </div>
             )}
             {!(media.tablet && isIndexProfilePage) && (
-              <div className={styles.right}>
-                {children}
-              </div>
+              <div className={styles.right}>{children}</div>
             )}
           </div>
         </div>
