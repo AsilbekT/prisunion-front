@@ -184,6 +184,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    margin-left: -1rem;
     z-index: 1;
   }
 
@@ -223,13 +224,11 @@ div.error-modal {
 }
 
 .info-text {
-  padding: 2rem;
-  padding-top: 4rem;
+  padding: 1rem 0;
 
   h2 {
     font-size: 2.5rem;
-    text-align: center;
     line-height: 130%;
-    font-weight: 500;
+    font-weight: 600;
   }
 }

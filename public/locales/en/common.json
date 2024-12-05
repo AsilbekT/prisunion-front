@@ -1,1 +1,140 @@
-{}
+{
+  "language": "Language",
+  "somethingWrong": "An error occurred. Please try again.",
+  "notApproved": "You have not been approved by the authorities yet.",
+  "pay": "Make Payment",
+  "savedShown": "Saved products will appear here!",
+  "nothingFound": "Nothing found!",
+  "personalInfo": "Personal Information",
+  "approvedStatusNone": "Not verified",
+  "approved": "Verified",
+  "prisonersCount": "Number of Prisoners",
+  "phoneNumber": "Phone Number",
+  "orderHistory": "Order History",
+  "contactUs": "Contact Us",
+  "categories": "Categories",
+  "saved": "Saved",
+  "cart": "Cart",
+  "addToCart": "Add to Cart",
+  "all": "All",
+  "cardNumber": "Card Number",
+  "downloadApp": "Download our Android app",
+  "cardExpires": "Expires",
+  "card": "Card Information",
+  "payment": "Payment",
+  "buy": "Buy",
+  "save": "Add to Saved",
+  "faq": "Frequently Asked Questions",
+  "enterPersonalInfo": "Enter your personal information.",
+  "profile": "My Profile",
+  "attention": "Attention!",
+  "enter": "Enter...",
+  "enterCode": "Enter the code sent to your phone number.",
+  "enterPrisonerInfo": "Enter prisoner information.",
+  "removeFavorite": "Remove from Saved",
+  "prisonerInfo": "Prisoner Information",
+  "relationship": "What is your relationship to the prisoner?",
+  "passport": "Passport Number",
+  "enterInfo": "Enter Information",
+  "clear": "Clear",
+  "orderHistoryShown": "Order history will appear here.",
+  "close": "Close",
+  "orderInfo": "Order Details",
+  "orderNumber": "Order Number",
+  "back": "Back",
+  "limit": "Limit",
+  "limitText": "In the Republic of Uzbekistan, products weighing more than 12 kg cannot be delivered to prisons.",
+  "removeItem": "Remove from Cart",
+  "search": "Search",
+  "fullName": "Full Name",
+  "name": "First Name",
+  "lastName": "Last Name",
+  "gender": "Gender",
+  "birthday": "Date of Birth",
+  "orderDate": "Order Date",
+  "address": "Address",
+  "products": "Products",
+  "loading": "Loading data!",
+  "wrongCode": "Incorrect code. Please try again.",
+  "orderStatus": "Order Status",
+  "resend": "Resend",
+  "productsWeight": "Total Product Weight",
+  "infoCheck": "Verify Information",
+  "clearCamera": "Step into a well-lit room for better camera verification.",
+  "tryAgain": "Try Again",
+  "male": "Male",
+  "takePhoto": "Take Photo",
+  "continue": "Continue",
+  "confirm": "Confirm",
+  "logout": "Logout",
+  "totalPrice": "Total Amount",
+  "paid": "Paid",
+  "outOfStock": "Out of Stock",
+  "notifications": "Notifications",
+  "relationships": {
+    "family": "Family Member",
+    "friend": "Friend",
+    "lawyer": "Lawyer",
+    "other": "Other"
+  },
+  "status": {
+    "PENDING": "Pending Verification",
+    "PROCESSED": "Accepted",
+    "DELIVERED": "Being Delivered",
+    "DONE": "Delivered"
+  },
+  "pages": {
+    "home": {
+      "title": "PrisUnion | Shopping for Prisoners",
+      "description": "Meta description for shopping for prisoners."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "Meta description for shopping for prisoners."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Meta description for shopping for prisoners."
+    },
+    "prisoners": {
+      "title": "Prisoners",
+      "description": "Meta description for shopping for prisoners."
+    },
+    "singleOrder": {
+      "title": "Order Details",
+      "description": "Meta description for shopping for prisoners."
+    },
+    "orders": {
+      "title": "Orders",
+      "description": "Meta description for shopping for prisoners."
+    },
+    "profile": {
+      "title": "My Profile",
+      "description": "Meta description for shopping for prisoners."
+    },
+    "info": {
+      "title": "My Profile",
+      "description": "Meta description for shopping for prisoners."
+    },
+    "favorites": {
+      "title": "Saved Products",
+      "description": "Meta description for shopping for prisoners."
+    },
+    "login": {
+      "title": "Login",
+      "description": "Meta description for shopping for prisoners."
+    }
+  },
+  "additionalInfo": "Additional Information",
+  "codeSent": "A 4-digit SMS code has been sent to your phone. Enter this code.",
+  "telegram": "Telegram Channel",
+  "phone": "Phone",
+  "email": "Email",
+  "login": "Login",
+  "download": "Download",
+  "pendingPayment": "Payment Not Made",
+  "yourPhone": "Your Phone Number",
+  "aboutOrder": "About the Order",
+  "pleaseEnterPhoneTitle": "Please enter your phone number to log in or register.",
+  "headerTitle": "POSTAL and PARCEL services for Inmates and Prisoners"
+}

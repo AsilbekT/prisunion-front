@@ -1,0 +1,14 @@
+{
+  "howDownload": {
+    "q": "How can I download the app?",
+    "a": "To download the app, go to the app store appropriate for your device's operating system. Android users can use the Google Play Store, while iOS users can use the Apple App Store. Enter the app name in the search bar and press the \"Install\" or \"Download\" button to start installing the app."
+  },
+  "howTrack": {
+    "q": "How can I track my order?",
+    "a": "To track your order, navigate to the \"Order History\" section of the app. You can view information about your order status in this section."
+  },
+  "howRegister": {
+    "q": "How do I create an account or log in?",
+    "a": "After opening the app, enter your mobile number. A 4-digit verification code will be sent to you. Enter this code in the code entry window to log in or create an account and use the app fully."
+  }
+}

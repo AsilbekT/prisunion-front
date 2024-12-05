@@ -1,10 +1,10 @@
-import { useGlobalContext } from "@/contexts/GlobalContext";
-import { IBanner } from "@/interfaces/banners.interface";
-import { cloneArrayTimes } from "@/utils/array.utils";
-import Link from "next/link";
-import { FC, memo, useLayoutEffect, useMemo, useRef } from "react";
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import { useGlobalContext } from '@/contexts/GlobalContext';
+import { IBanner } from '@/interfaces/banners.interface';
+import { cloneArrayTimes } from '@/utils/array.utils';
+import Link from 'next/link';
+import { FC, memo, useLayoutEffect, useMemo, useRef } from 'react';
+import { Autoplay } from 'swiper/modules';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import styles from './Banners.module.scss';
 
 interface BannerProps {
@@ -16,19 +16,20 @@ const Banners: FC<BannerProps> = memo(({ banners }) => {
   const { media } = useGlobalContext();
 
   const bannerEls = useMemo(() => {
-    return cloneArrayTimes(banners, 10).map((banner, index) => {
+    return cloneArrayTimes(banners, 30).map((banner, index) => {
       return (
         <SwiperSlide key={`${index}-${banner.id}`} className={styles.banner}>
-          <Link href={`/categories/${banner.category}/products`} title={banner.title}>
+          <Link
+            href={`/categories/${banner.category}/products`}
+            title={banner.title}
+          >
             <figure className="sixteen-nine">
               <img src={banner.image} alt={banner.title} />
             </figure>
             {(banner.title || banner.description) && (
               <span>
                 {banner.title && (
-                  <span className="heading--primary">
-                    {banner.title}
-                  </span>
+                  <span className="heading--primary">{banner.title}</span>
                 )}
                 {banner.description && (
                   <p className="text-pale">{banner.description}</p>
@@ -63,8 +64,8 @@ const Banners: FC<BannerProps> = memo(({ banners }) => {
             1025: {
               slidesPerView: 2,
               spaceBetween: 20,
-              centeredSlides: true
-            }
+              centeredSlides: true,
+            },
           }}
         >
           {bannerEls}
