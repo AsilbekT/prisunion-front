@@ -30,9 +30,7 @@ export default function Home({ banners, popularProducts }: IHomePageProps) {
         <SafeHydrate>
           <div className="container">
             <div className="info-text">
-              <h2 className="heading heading--tertiary">
-                Mahkum va Mahbuslar uchun POCHTA va BANDEROL xizmati
-              </h2>
+              <h2 className="heading heading--tertiary">{t('headerTitle')}</h2>
             </div>
           </div>
           <Banners banners={banners} />
